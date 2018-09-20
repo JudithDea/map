@@ -3,9 +3,9 @@ import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 
 class ShowMap extends Component {
   state = {
-    lat: 51.505,
-    lng: -0.09,
-    zoom: 13
+    lat: 50.733378,
+    lng: 7.106775,
+    zoom: 15
   };
 
   render() {
