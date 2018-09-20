@@ -4,14 +4,14 @@ import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 class ShowMap extends Component {
   state = {
     lat: 50.733378,
-    lng: 7.106775,
-    zoom: 15
+    lng: 7.096775,
+    zoom: 14
   };
 
   render() {
     const position = [this.state.lat, this.state.lng];
     return (
-      <div className="container">
+      <div role="application">
         <Map
           center={position}
           zoom={this.state.zoom}
