@@ -11,7 +11,7 @@ class ShowMap extends Component {
   render() {
     const position = [this.state.lat, this.state.lng];
     return (
-      <div role="application">
+      <div id="mapid" role="application">
         <Map
           center={position}
           zoom={this.state.zoom}

@@ -6,6 +6,7 @@ const Header = () => {
       <div className="container">
         <a href="/" className="navbar-brand py-2">
           <h1>Neighborhood Map</h1>
+          <p>"Stolpersteine" in Bonn, Germany</p>
         </a>
         <ul className="navbar-nav mr-2">
           <li className="nav-item">
@@ -24,6 +25,14 @@ const Header = () => {
           </li>
         </ul>
       </div>
+      <form className="form-inline my-2 my-lg-0">
+        <input
+          className="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </form>
     </nav>
   );
 };
