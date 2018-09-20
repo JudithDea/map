@@ -9,6 +9,15 @@ const Header = () => {
         </a>
         <ul className="navbar-nav mr-2">
           <li className="nav-item">
+            <a
+              href="https://en.wikipedia.org/wiki/Stolperstein"
+              target="_blank"
+              className="nav-link"
+            >
+              Stolpersteine?
+            </a>
+          </li>
+          <li className="nav-item">
             <a href="#" className="nav-link">
               About
             </a>

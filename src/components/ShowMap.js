@@ -15,7 +15,7 @@ class ShowMap extends Component {
         <Map
           center={position}
           zoom={this.state.zoom}
-          style={{ height: "800px" }}
+          style={{ height: "700px" }}
         >
           <TileLayer
             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"

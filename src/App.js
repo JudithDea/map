@@ -10,11 +10,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <div className="container">
-          <p>
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
-        </div>
         <ShowMap />
         <Footer />
       </div>
