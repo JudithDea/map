@@ -9,7 +9,7 @@ class ShowMap extends Component {
   // async componentDidMount() {
   //   try {
   //     const response = await fetch(
-  //       "https://overpass-api.de/api/interpreter?data=[out:json][timeout:25][bbox:50.5,6.9,50.88,7.4];(node[%22memorial:type%22=%22stolperstein%22];way[%22memorial:type%22=%22stolperstein%22];rel[%22memorial:type%22=%22stolperstein%22];);out%20meta;%3E;out%20meta%20qt;"
+  //       "http://overpass-api.de/api/interpreter?data=[out:json]%2F*%0AThis%20has%20been%20generated%20by%20the%20overpass-turbo%20wizard.%0AThe%20original%20search%20was%3A%0A%E2%80%9C%22memorial%3Atype%22%3Dstolperstein%20and%20type%3Anode%20in%20%22Bonn%22%20%E2%80%9D%0A*%2F%0A%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%0A%2F%2F%20fetch%20area%20%E2%80%9CBonn%E2%80%9D%20to%20search%20in%0Aarea%283600062508%29-%3E.searchArea%3B%0A%2F%2F%20gather%20results%0A%28%0A%20%20%2F%2F%20query%20part%20for%3A%20%E2%80%9C%22memorial%3Atype%22%3Dstolperstein%E2%80%9D%0A%20%20node%5B%22memorial%3Atype%22%3D%22stolperstein%22%5D%28area.searchArea%29%3B%0A%29%3B%0A%2F%2F%20print%20results%0Aout%20body%3B%0A%3E%3B%0Aout%20skel%20qt%3B"
   //     );
   //     const json = await response.json();
   //     console.log({ data: json });
@@ -24,7 +24,7 @@ class ShowMap extends Component {
 
   fetchData() {
     fetch(
-      "https://overpass-api.de/api/interpreter?data=[out:json][timeout:25][bbox:50.5,6.9,50.88,7.4];(node[%22memorial:type%22=%22stolperstein%22];way[%22memorial:type%22=%22stolperstein%22];rel[%22memorial:type%22=%22stolperstein%22];);out%20meta;%3E;out%20meta%20qt;"
+      "http://overpass-api.de/api/interpreter?data=[out:json]%2F*%0AThis%20has%20been%20generated%20by%20the%20overpass-turbo%20wizard.%0AThe%20original%20search%20was%3A%0A%E2%80%9C%22memorial%3Atype%22%3Dstolperstein%20and%20type%3Anode%20in%20%22Bonn%22%20%E2%80%9D%0A*%2F%0A%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%0A%2F%2F%20fetch%20area%20%E2%80%9CBonn%E2%80%9D%20to%20search%20in%0Aarea%283600062508%29-%3E.searchArea%3B%0A%2F%2F%20gather%20results%0A%28%0A%20%20%2F%2F%20query%20part%20for%3A%20%E2%80%9C%22memorial%3Atype%22%3Dstolperstein%E2%80%9D%0A%20%20node%5B%22memorial%3Atype%22%3D%22stolperstein%22%5D%28area.searchArea%29%3B%0A%29%3B%0A%2F%2F%20print%20results%0Aout%20body%3B%0A%3E%3B%0Aout%20skel%20qt%3B"
     )
       .then(res => res.json())
       .then(steine => {
@@ -34,16 +34,12 @@ class ShowMap extends Component {
   }
 
   render() {
-    const position = [this.state.lat, this.state.lon];
+    let position = [""];
     // console.log(this.state.steine);
     const mapPosition = [50.729203, 7.099475];
 
     return (
       <div id="mapid" role="application">
-        {this.state.steine.map(stein => {
-          let position = [stein.lat, stein.lon];
-          console.log(position);
-        })}
         <Map
           center={mapPosition}
           zoom={14}
@@ -61,29 +57,11 @@ class ShowMap extends Component {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
-          {/* {elements.map(stein => {
-            <Marker position={position}>
-              <Popup>
-                <p className="mb-0" style={{ fontWeight: "bold" }}>
-                  {stein.name}
-                </p>
-                <p className="mb-o">
-                  <span style={{ fontWeight: "bold" }}>Date of birth: </span>
-                  {stein.date_of_birth}
-                </p>
-                <p className="mb-o">
-                  <span style={{ fontWeight: "bold" }}>Text on marker: </span>
-                  {stein.text}
-                </p>
-                <img
-                  src={`https://de.wikipedia.org/wiki/Liste_der_Stolpersteine_in_Bonn#/media/${
-                    stein.image
-                  }`}
-                  alt="Image of a Stolperstein"
-                />
-              </Popup>
-            </Marker>;
-          })} */}
+          {this.state.steine.map(stein => {
+            position = [stein.lat, stein.lon];
+            <Marker position={position} />;
+            console.log(position);
+          })}
         </Map>
       </div>
     );
