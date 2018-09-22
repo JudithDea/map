@@ -28,18 +28,22 @@ class ShowMap extends Component {
     )
       .then(res => res.json())
       .then(steine => {
-        this.setState({ steine });
+        this.setState({ steine: steine.elements });
       })
       .catch(err => console.log("There was a problem loading data", err));
   }
 
   render() {
-    // const position = [this.state.lat, this.state.lon];
-    console.log(this.state.steine.elements);
+    const position = [this.state.lat, this.state.lon];
+    // console.log(this.state.steine);
     const mapPosition = [50.729203, 7.099475];
 
     return (
       <div id="mapid" role="application">
+        {this.state.steine.map(stein => {
+          let position = [stein.lat, stein.lon];
+          console.log(position);
+        })}
         <Map
           center={mapPosition}
           zoom={14}
