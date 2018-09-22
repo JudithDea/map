@@ -6,34 +6,38 @@ class ShowMap extends Component {
     steine: []
   };
 
-  async componentDidMount() {
-    try {
-      const response = await fetch(
-        "https://overpass-api.de/api/interpreter?data=[out:json][timeout:25][bbox:50.5,6.9,50.88,7.4];(node[%22memorial:type%22=%22stolperstein%22];way[%22memorial:type%22=%22stolperstein%22];rel[%22memorial:type%22=%22stolperstein%22];);out%20meta;%3E;out%20meta%20qt;"
-      );
-      const json = await response.json();
-      console.log({ data: json });
-    } catch (error) {
-      console.log("Oops. Something went wrong.", error);
-    }
+  // async componentDidMount() {
+  //   try {
+  //     const response = await fetch(
+  //       "https://overpass-api.de/api/interpreter?data=[out:json][timeout:25][bbox:50.5,6.9,50.88,7.4];(node[%22memorial:type%22=%22stolperstein%22];way[%22memorial:type%22=%22stolperstein%22];rel[%22memorial:type%22=%22stolperstein%22];);out%20meta;%3E;out%20meta%20qt;"
+  //     );
+  //     const json = await response.json();
+  //     console.log({ data: json });
+  //   } catch (error) {
+  //     console.log("Oops. Something went wrong.", error);
+  //   }
+  // }
+
+  componentDidMount() {
+    this.fetchData();
   }
 
-  // componentDidMount() {
-  //   this.fetchData();
-  // }
-
-  // fetchData() {
-  //   fetch(
-  //     "https://overpass-api.de/api/interpreter?data=[out:json][timeout:25][bbox:50.5,6.9,50.88,7.4];(node[%22memorial:type%22=%22stolperstein%22];way[%22memorial:type%22=%22stolperstein%22];rel[%22memorial:type%22=%22stolperstein%22];);out%20meta;%3E;out%20meta%20qt;"
-  //   )
-  //     .then(res => res.json())
-  //     .then(parsedJSON => console.log("here it is", parsedJSON.elements))
-  //     .catch(err => console.log("There was a problem loading data", err));
-  // }
+  fetchData() {
+    fetch(
+      "https://overpass-api.de/api/interpreter?data=[out:json][timeout:25][bbox:50.5,6.9,50.88,7.4];(node[%22memorial:type%22=%22stolperstein%22];way[%22memorial:type%22=%22stolperstein%22];rel[%22memorial:type%22=%22stolperstein%22];);out%20meta;%3E;out%20meta%20qt;"
+    )
+      .then(res => res.json())
+      .then(steine => {
+        this.setState({ steine });
+      })
+      .catch(err => console.log("There was a problem loading data", err));
+  }
 
   render() {
     // const position = [this.state.lat, this.state.lon];
+    console.log(this.state.steine.elements);
     const mapPosition = [50.729203, 7.099475];
+
     return (
       <div id="mapid" role="application">
         <Map
@@ -53,8 +57,8 @@ class ShowMap extends Component {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
-          {this.state.steine.map(stein => (
-            <Marker position={stein.position}>
+          {/* {elements.map(stein => {
+            <Marker position={position}>
               <Popup>
                 <p className="mb-0" style={{ fontWeight: "bold" }}>
                   {stein.name}
@@ -74,8 +78,8 @@ class ShowMap extends Component {
                   alt="Image of a Stolperstein"
                 />
               </Popup>
-            </Marker>
-          ))}
+            </Marker>;
+          })} */}
         </Map>
       </div>
     );
