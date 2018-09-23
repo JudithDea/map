@@ -70,11 +70,13 @@ class ShowMap extends Component {
                     <br />
                     Date of death: {stein.tags["person:date_of_death"]}
                   </p>
-                  <p className="mb-0">{stein.tags["memorial:text"]}</p>
+                  <p className="mb-0">"{stein.tags["memorial:text"]}" </p>
                   <a
                     href={`https://de.wikipedia.org/wiki/Liste_der_Stolpersteine_in_Bonn#/media/${
                       stein.tags.image
                     }`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Click here to see an image of the marker
                   </a>

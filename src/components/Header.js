@@ -13,14 +13,20 @@ const Header = () => {
             <a
               href="https://en.wikipedia.org/wiki/Stolperstein"
               target="_blank"
+              rel="noopener noreferrer"
               className="nav-link"
             >
-              Stolpersteine?
+              What are Stolpersteine?
             </a>
           </li>
           <li className="nav-item">
-            <a href="#" className="nav-link">
-              About
+            <a href="/" className="nav-link">
+              Translation cheat sheet
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="/" className="nav-link">
+              About this page
             </a>
           </li>
         </ul>
