@@ -107,7 +107,7 @@ class ShowMap extends Component {
           />
 
           {this.state.steine.map(stein => (
-            <Marker position={stein.position}>
+            <Marker position={stein.position} key={stein.id}>
               <Popup>
                 <p className="mb-0" style={{ fontWeight: "bold" }}>
                   {stein.name}

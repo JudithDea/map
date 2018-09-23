@@ -56,14 +56,32 @@ class ShowMap extends Component {
             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-
-          //LOOPING OVER THE STATE TO PULL COORDINATES FOR MARKERS
-          //CONSOLE.LOG is LOGGING COORDINATES
-
           {this.state.steine.map(stein => {
             position = [stein.lat, stein.lon];
-            console.log(position);
-            <Marker position={{position}} />;
+            return (
+              <Marker position={position} key={stein.id}>
+                <Popup>
+                  <p className="mb-0">
+                    <span style={{ fontWeight: "bold" }}>
+                      {stein.tags.name}
+                    </span>
+                    <br />
+                    Date of birth: {stein.tags["person:date_of_birth"]}
+                    <br />
+                    Date of death: {stein.tags["person:date_of_death"]}
+                  </p>
+                  <p className="mb-0">{stein.tags["memorial:text"]}</p>
+                  <a
+                    href={`https://de.wikipedia.org/wiki/Liste_der_Stolpersteine_in_Bonn#/media/${
+                      stein.tags.image
+                    }`}
+                  >
+                    Click here to see an image of the marker
+                  </a>
+                </Popup>
+              </Marker>
+            );
+          })}
           })}
         </Map>
       </div>
