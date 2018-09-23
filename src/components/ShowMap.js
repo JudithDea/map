@@ -57,10 +57,13 @@ class ShowMap extends Component {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
+          //LOOPING OVER THE STATE TO PULL COORDINATES FOR MARKERS
+          //CONSOLE.LOG is LOGGING COORDINATES
+
           {this.state.steine.map(stein => {
             position = [stein.lat, stein.lon];
-            <Marker position={position} />;
             console.log(position);
+            <Marker position={{position}} />;
           })}
         </Map>
       </div>
