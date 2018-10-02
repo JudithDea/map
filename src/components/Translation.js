@@ -3,8 +3,8 @@ import React from "react";
 export default () => {
   return (
     <div>
-      <h1>Translation Cheat Sheet</h1>
-      <h4>To help understand the markers - Here lived... </h4>
+      <h1>How to translate Stolpersteine</h1>
+      <h4>Here lived... </h4>
       <p>
         The typical layout of a Stolperstein includes the following information,
         if known:
