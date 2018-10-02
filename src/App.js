@@ -30,7 +30,7 @@ class App extends Component {
     return (
       <div style={{ height: "100%" }}>
         <Header />
-        <SideDrawer />
+        <SideDrawer steine={this.state.steine} />
         {/* <ShowMap steine={this.state.steine} /> */}
         <Footer />
       </div>

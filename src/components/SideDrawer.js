@@ -8,12 +8,34 @@ class SideDrawer extends Component {
         <ul className="list-group pt-3 pl-2 pb-3">
           <li>About this page</li>
           <li>
-            About Stolpersteine <i className="fas fa-external-link-alt" />
+            <a
+              href="https://en.wikipedia.org/wiki/Stolperstein"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              About Stolpersteine <i className="fas fa-external-link-alt" />
+            </a>
           </li>
           <li>Translation Help</li>
+
           <li>
-            <input type="text" placeholder="Search name/street" />
+            <input
+              type="text"
+              placeholder="Search name/street"
+              className="rounded"
+            />
           </li>
+        </ul>
+        <ul className="locations list-group">
+          {this.props.steine.map(stein => {
+            return (
+              <li key={stein.id} className="list-group-item">
+                <span className="font-weight-bold">{stein.tags.name}</span>{" "}
+                <br />
+                {stein.tags["addr:street"]} {stein.tags["addr:housenumber"]}
+              </li>
+            );
+          })}
         </ul>
       </nav>
     );
