@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   state = {
+    sideDrawerOpen: false,
     steine: []
   };
 
@@ -26,12 +27,23 @@ class App extends Component {
       .catch(err => console.log("There was a problem loading data", err));
   }
 
+  hamburgerClickHandler = () => {
+    this.setState(prevState => {
+      return { sideDrawerOpen: !prevState.sideDrawerOpen };
+    });
+  };
+
   render() {
+    let sideDrawer;
+    if (this.state.sideDrawerOpen) {
+      sideDrawer = <SideDrawer steine={this.state.steine} />;
+    }
+
     return (
       <div style={{ height: "100%" }}>
-        <Header />
-        <SideDrawer steine={this.state.steine} />
-        {/* <ShowMap steine={this.state.steine} /> */}
+        <Header hamburgerClickHandler={this.hamburgerClickHandler} />
+        {sideDrawer}
+        <ShowMap steine={this.state.steine} />
         <Footer />
       </div>
     );

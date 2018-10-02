@@ -1,11 +1,19 @@
 import React from "react";
+import "../App.css";
 
 const Footer = () => {
   return (
     <footer className="page-footer fixed-bottom font-small bg-secondary py-2 text-light">
-      <p className="footer-copyright text-center m-0">
-        © 2018 -- Judith Dea -- Map and Stolperstein data from
-        www.openstreetmap.org. Thank you!
+      <p className="footer-component footer-copyright text-center m-0">
+        © 2018 -- Judith Dea -- Map and Stolperstein data from{" "}
+        <a
+          href="www.openstreetmap.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          www.openstreetmap.org
+        </a>
+        . Thank you!
       </p>
     </footer>
   );

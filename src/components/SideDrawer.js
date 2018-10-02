@@ -4,7 +4,7 @@ import "./SideDrawer.css";
 class SideDrawer extends Component {
   render() {
     return (
-      <nav className="side-drawer">
+      <nav className="side-drawer fixed-left">
         <ul className="list-group pt-3 pl-2 pb-3">
           <li>About this page</li>
           <li>
@@ -17,16 +17,15 @@ class SideDrawer extends Component {
             </a>
           </li>
           <li>Translation Help</li>
-
           <li>
             <input
               type="text"
-              placeholder="Search name/street"
+              placeholder="Search Name/Street"
               className="rounded"
             />
           </li>
         </ul>
-        <ul className="locations list-group">
+        <ul className="locations list-group m-1">
           {this.props.steine.map(stein => {
             return (
               <li key={stein.id} className="list-group-item">

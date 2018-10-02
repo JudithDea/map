@@ -5,3 +5,14 @@ html {
 body {
   height: 100%;
 }
+
+.footer-component a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-component a:hover {
+  font-weight: bold;
+  color: purple;
+  text-decoration: none;
+}

@@ -1,9 +1,13 @@
 import React from "react";
 
-const Header = () => {
+const Header = props => {
   return (
     <nav className="navbar fixed-top navbar-expand-sm navbar-dark bg-secondary py-0">
-      <button className="bg-secondary border-0">
+      <button
+        className="bg-secondary border-0"
+        onClick={props.hamburgerClickHandler}
+        style={{ cursor: "pointer" }}
+      >
         <i className="fas fa-bars fa-2x text-light" />
       </button>
       <div />
