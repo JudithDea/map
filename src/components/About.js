@@ -12,7 +12,7 @@ export default () => {
       </p>
       <p>
         The objective was to create a responsive React app, displaying a map
-        that shows certain locations and additional information about that
+        that shows certain locations and additional information about each
         location, coming from a separate API.
       </p>
       <p>
@@ -21,7 +21,7 @@ export default () => {
         would walk by on a daily basis when I was living in Germany, and I had
         recently heard that the locations of Stolpersteine were collected and
         stored in a database. From here, it only took a quick Google Search and
-        a lot of MacGyvering to shape this project the way I imagined.
+        many hours of MacGyvering to shape this project the way I imagined.
       </p>
       <p>
         I hope this app creates awareness of Project Stolpersteine. Each
@@ -30,7 +30,7 @@ export default () => {
         this neighborhood map is supposed to help breaking down and visualizing
         the cruel fate victims of the Holocaust had to face.
       </p>
-      <p>TLDR: This is the final project for my Nanodegree</p>
+      <p>TLDR: This is the final project for my Udacity Nanodegree</p>
       <p>
         <a
           href="https://en.wikipedia.org/wiki/Stolperstein"
