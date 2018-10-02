@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ShowMap from "./components/ShowMap";
+import SideDrawer from "./components/SideDrawer";
 
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
@@ -28,10 +28,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div style={{ height: "100%" }}>
         <Header />
-
-        <ShowMap steine={this.state.steine} />
+        <SideDrawer />
+        {/* <ShowMap steine={this.state.steine} /> */}
         <Footer />
       </div>
     );
