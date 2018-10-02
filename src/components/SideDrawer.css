@@ -1,6 +1,6 @@
 .side-drawer {
   height: 100%;
-  width: 200px;
+  width: 280px;
   background: #d5d8dc;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -9,11 +9,16 @@
   padding-top: 90px;
   border: none;
   z-index: 200;
+  overflow: scroll;
 }
 
 .side-drawer li {
   list-style-type: none;
   padding-top: 10px;
+}
+
+.side-drawer li input {
+  width: 95%;
 }
 
 .side-drawer a {
