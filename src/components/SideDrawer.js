@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import escapeRegExp from "escape-string-regexp";
-import sortBy from "sort-by";
+
 import "./SideDrawer.css";
 
 class SideDrawer extends Component {
@@ -18,8 +18,9 @@ class SideDrawer extends Component {
     let showingSteine;
     if (this.state.query) {
       const match = new RegExp(escapeRegExp(this.state.query), "i");
-      showingSteine = this.props.steine.filter(stein =>
-        match.test(stein.tags.name)
+      showingSteine = this.props.steine.filter(
+        stein =>
+          match.test(stein.tags.name) || match.test(stein.tags["addr:street"])
       );
     } else {
       showingSteine = this.props.steine;
