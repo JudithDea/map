@@ -1,8 +1,30 @@
 import React, { Component } from "react";
+
+import escapeRegExp from "escape-string-regexp";
+import sortBy from "sort-by";
 import "./SideDrawer.css";
 
 class SideDrawer extends Component {
+  state = {
+    query: "",
+    filteredSteine: []
+  };
+
+  updateQuery = query => {
+    this.setState({ query });
+  };
+
   render() {
+    let showingSteine;
+    if (this.state.query) {
+      const match = new RegExp(escapeRegExp(this.state.query), "i");
+      showingSteine = this.props.steine.filter(stein =>
+        match.test(stein.tags.name)
+      );
+    } else {
+      showingSteine = this.props.steine;
+    }
+
     return (
       <nav className="side-drawer fixed-left">
         <ul className="list-group pt-3 pl-2 pb-3">
@@ -22,11 +44,13 @@ class SideDrawer extends Component {
               type="text"
               placeholder="Search Name/Street"
               className="rounded"
+              value={this.state.query}
+              onChange={e => this.updateQuery(e.target.value)}
             />
           </li>
         </ul>
         <ul className="locations list-group m-1">
-          {this.props.steine.map(stein => {
+          {showingSteine.map(stein => {
             return (
               <li key={stein.id} className="list-group-item">
                 <span className="font-weight-bold">{stein.tags.name}</span>{" "}
