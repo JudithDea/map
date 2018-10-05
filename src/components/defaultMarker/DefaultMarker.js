@@ -19,8 +19,16 @@ const DefaultMarker = props => {
   return props.steine.map(stein => {
     position = [stein.lat, stein.lon];
 
+    /// IF a marker is currently selected, in this iteration the current ID is set equal to the selected marker's ID
+    const currentMarkerSelected = stein.id === props.CurrentMarker;
+
     return (
-      <Marker position={position} key={stein.id} icon={defaultMarkerIcon}>
+      <Marker
+        position={position}
+        key={stein.id}
+        icon={defaultMarkerIcon}
+        current={currentMarkerSelected}
+      >
         <Popup>
           <p className="mb-0">
             <span style={{ fontWeight: "bold" }}>{stein.tags.name}</span>
