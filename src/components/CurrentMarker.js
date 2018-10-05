@@ -1,7 +1,13 @@
 import React from "react";
-import { Map, TileLayer, Marker, Popup } from "react-leaflet";
+import { Marker, Popup } from "react-leaflet";
+import L from "leaflet";
 
 const CurrentMarker = props => {
+  var activeMarkerIcon = L.icon({
+    iconUrl: "http://joshuafrazier.info/images/firefox.svg",
+    iconSize: [38, 95] // size of the icon
+  });
+
   let imageText;
 
   let activeMarkerPosition = [
@@ -14,7 +20,7 @@ const CurrentMarker = props => {
   let activeMarker;
   if (props.currentMarker) {
     activeMarker = (
-      <Marker position={activeMarkerPosition}>
+      <Marker position={activeMarkerPosition} icon={activeMarkerIcon}>
         <Popup>
           <p className="mb-0">
             <span style={{ fontWeight: "bold" }}>
