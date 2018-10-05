@@ -1,11 +1,16 @@
 import React from "react";
 import { Marker, Popup } from "react-leaflet";
-import L from "leaflet";
+import { renderToStaticMarkup } from "react-dom/server";
+import { divIcon } from "leaflet";
+
+import "./CurrentMarker.css";
 
 const CurrentMarker = props => {
-  var activeMarkerIcon = L.icon({
-    iconUrl: "http://joshuafrazier.info/images/firefox.svg",
-    iconSize: [38, 95] // size of the icon
+  const iconMarkup = renderToStaticMarkup(
+    <i style={{ color: "red" }} className=" fa fa-map-marker-alt fa-3x" />
+  );
+  const activeMarkerIcon = divIcon({
+    html: iconMarkup
   });
 
   let imageText;
@@ -20,7 +25,11 @@ const CurrentMarker = props => {
   let activeMarker;
   if (props.currentMarker) {
     activeMarker = (
-      <Marker position={activeMarkerPosition} icon={activeMarkerIcon}>
+      <Marker
+        position={activeMarkerPosition}
+        icon={activeMarkerIcon}
+        zIndexOffset={200}
+      >
         <Popup>
           <p className="mb-0">
             <span style={{ fontWeight: "bold" }}>
