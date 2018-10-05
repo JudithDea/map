@@ -53,7 +53,12 @@ class SideDrawer extends Component {
         <ul className="locations list-group m-1">
           {showingSteine.map(stein => {
             return (
-              <li key={stein.id} className="list-group-item">
+              <li
+                key={stein.id}
+                id={stein.id}
+                className="list-group-item"
+                onClick={this.props.currentMarkerClickHandler}
+              >
                 <span className="font-weight-bold">{stein.tags.name}</span>{" "}
                 <br />
                 {stein.tags["addr:street"]} {stein.tags["addr:housenumber"]}

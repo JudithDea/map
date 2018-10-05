@@ -9,7 +9,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 class App extends Component {
   state = {
     sideDrawerOpen: false,
-    steine: []
+    steine: [],
+    currentMarker: ""
   };
 
   componentDidMount() {
@@ -33,17 +34,31 @@ class App extends Component {
     });
   };
 
+  currentMarkerClickHandler = e => {
+    this.setState({
+      currentMarker: this.state.steine.filter(stein => stein.id == e.target.id)
+    });
+  };
+
   render() {
     let sideDrawer;
     if (this.state.sideDrawerOpen) {
-      sideDrawer = <SideDrawer steine={this.state.steine} />;
+      sideDrawer = (
+        <SideDrawer
+          steine={this.state.steine}
+          currentMarkerClickHandler={this.currentMarkerClickHandler}
+        />
+      );
     }
 
     return (
       <div style={{ height: "100%" }}>
         <Header hamburgerClickHandler={this.hamburgerClickHandler} />
         {sideDrawer}
-        <ShowMap steine={this.state.steine} />
+        <ShowMap
+          steine={this.state.steine}
+          currentMarker={this.state.currentMarker}
+        />
         <Footer />
       </div>
     );

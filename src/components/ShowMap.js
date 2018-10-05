@@ -7,6 +7,10 @@ const ShowMap = props => {
   const mapPosition = [50.729203, 7.099475];
   let imageText;
 
+  // const activeMarkerIcon = L.icon({ iconUrl: require("../activeMarker.png") });
+
+  console.log(props.currentMarker);
+
   return (
     <div id="mapid" role="application">
       <Map
@@ -27,9 +31,6 @@ const ShowMap = props => {
         />
         {props.steine.map(stein => {
           position = [stein.lat, stein.lon];
-          if (stein.tags.image) {
-            imageText = "Click here for a photo of the marker ";
-          }
 
           return (
             <Marker position={position} key={stein.id}>
