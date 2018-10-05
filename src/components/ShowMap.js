@@ -9,7 +9,22 @@ const ShowMap = props => {
 
   // const activeMarkerIcon = L.icon({ iconUrl: require("../activeMarker.png") });
 
-  console.log(props.currentMarker);
+  // console.log(
+  //   props.currentMarker[0] && props.currentMarker[0].lat,
+  //   props.currentMarker[0] && props.currentMarker[0].lon
+  // );
+
+  let activeMarkerPosition = [
+    props.currentMarker[0] && props.currentMarker[0].lat,
+    props.currentMarker[0] && props.currentMarker[0].lon
+  ];
+
+  console.log(activeMarkerPosition);
+
+  let activeMarker;
+  if (props.currentMarker) {
+    activeMarker = <Marker position={activeMarkerPosition} />;
+  }
 
   return (
     <div id="mapid" role="application">
@@ -29,7 +44,7 @@ const ShowMap = props => {
           attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {props.steine.map(stein => {
+        {/* {props.steine.map(stein => {
           position = [stein.lat, stein.lon];
 
           return (
@@ -57,7 +72,8 @@ const ShowMap = props => {
               </Popup>
             </Marker>
           );
-        })}
+        })} */}
+        {activeMarker}
       </Map>
     </div>
   );
