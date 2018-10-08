@@ -2,13 +2,13 @@ import React from "react";
 import { Marker, Popup } from "react-leaflet";
 import { renderToStaticMarkup } from "react-dom/server";
 import { divIcon } from "leaflet";
+import IconRed from "./IconRed";
+import IconBlue from "./IconBlue";
 
 import "./DefaultMarker.css";
 
 const DefaultMarker = props => {
-  const iconMarkup = renderToStaticMarkup(
-    <i className=" fa fa-map-marker-alt fa-3x" />
-  );
+  const iconMarkup = renderToStaticMarkup(<IconBlue />);
   const defaultMarkerIcon = divIcon({
     html: iconMarkup
   });
@@ -21,6 +21,7 @@ const DefaultMarker = props => {
 
     /// IF a marker is currently selected, in this iteration the current ID is set equal to the selected marker's ID
     const currentMarkerSelected = stein.id === props.CurrentMarker;
+    // console.log(props.CurrentMarker);
 
     return (
       <Marker

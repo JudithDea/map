@@ -20,7 +20,7 @@ const CurrentMarker = props => {
     props.currentMarker[0] && props.currentMarker[0].lon
   ];
 
-  console.log(activeMarkerPosition);
+  // console.log(activeMarkerPosition);
 
   let activeMarker;
   if (props.currentMarker) {

@@ -59,7 +59,12 @@ class SideDrawer extends Component {
                 className="list-group-item"
                 onClick={this.props.currentMarkerClickHandler}
               >
-                <span className="font-weight-bold">{stein.tags.name}</span>{" "}
+                <span
+                  className="font-weight-bold"
+                  style={{ cursor: "pointer" }}
+                >
+                  {stein.tags.name}
+                </span>{" "}
                 <br />
                 {stein.tags["addr:street"]} {stein.tags["addr:housenumber"]}
               </li>
