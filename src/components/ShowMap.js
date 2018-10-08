@@ -27,11 +27,11 @@ const ShowMap = props => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        <DefaultMarker steine={props.steine} />
-        <CurrentMarker
-          currentMarker={props.currentMarker}
+        <DefaultMarker
           steine={props.steine}
+          defaultSteine={props.defaultSteine}
         />
+        <CurrentMarker activeStein={props.activeStein} steine={props.steine} />
       </Map>
     </div>
   );

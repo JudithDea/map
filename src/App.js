@@ -10,7 +10,9 @@ class App extends Component {
   state = {
     sideDrawerOpen: false,
     steine: [],
-    currentMarker: ""
+    currentMarker: "",
+    defaultSteine: [],
+    activeStein: []
   };
 
   componentDidMount() {
@@ -36,7 +38,10 @@ class App extends Component {
 
   currentMarkerClickHandler = e => {
     this.setState({
-      currentMarker: this.state.steine.filter(stein => stein.id == e.target.id)
+      activeStein: this.state.steine.filter(stein => stein.id == e.target.id)
+    });
+    this.setState({
+      defaultSteine: this.state.steine.filter(stein => stein.id !== e.target.id)
     });
   };
 
@@ -57,7 +62,7 @@ class App extends Component {
         {sideDrawer}
         <ShowMap
           steine={this.state.steine}
-          currentMarker={this.state.currentMarker}
+          activeStein={this.state.activeStein}
         />
         <Footer />
       </div>

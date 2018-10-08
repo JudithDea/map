@@ -13,23 +13,24 @@ const DefaultMarker = props => {
     html: iconMarkup
   });
 
+  //   const activeIconMarkup = renderToStaticMarkup(<IconRed />);
+  //   const activeMarkerIcon = divIcon({
+  //     html: activeIconMarkup
+  //   });
+
   let imageText;
   let position = [""];
+
+  //   const mieze = props.currentMarker[0] && props.currentMarker[0].id;
+  //   console.log(props.currentMarker);
+  //   const feathers = props.steine.find(stein => stein.id === mieze);
+  //   console.log(feathers);
 
   return props.steine.map(stein => {
     position = [stein.lat, stein.lon];
 
-    /// IF a marker is currently selected, in this iteration the current ID is set equal to the selected marker's ID
-    const currentMarkerSelected = stein.id === props.CurrentMarker;
-    // console.log(props.CurrentMarker);
-
     return (
-      <Marker
-        position={position}
-        key={stein.id}
-        icon={defaultMarkerIcon}
-        current={currentMarkerSelected}
-      >
+      <Marker position={position} key={stein.id} icon={defaultMarkerIcon}>
         <Popup>
           <p className="mb-0">
             <span style={{ fontWeight: "bold" }}>{stein.tags.name}</span>
