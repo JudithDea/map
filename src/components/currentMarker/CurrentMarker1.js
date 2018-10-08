@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Marker, Popup } from "react-leaflet";
 import { renderToStaticMarkup } from "react-dom/server";
 import { divIcon } from "leaflet";

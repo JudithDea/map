@@ -6,7 +6,6 @@ import IconRed from "./IconRed";
 
 class CurrentMarker extends Marker {
   componentDidMount() {
-    super.componentDidMount();
     this.leafletElement.openPopup();
   }
 
