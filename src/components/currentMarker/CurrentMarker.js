@@ -13,11 +13,6 @@ const CurrentMarker = props => {
   let imageText;
   let position = [""];
 
-  //   const mieze = props.currentMarker[0] && props.currentMarker[0].id;
-  //   console.log(props.currentMarker);
-  //   const feathers = props.steine.find(stein => stein.id === mieze);
-  //   console.log(feathers);
-
   return props.activeStein.map(stein => {
     position = [stein.lat, stein.lon];
 

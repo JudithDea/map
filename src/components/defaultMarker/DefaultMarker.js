@@ -12,18 +12,8 @@ const DefaultMarker = props => {
     html: iconMarkup
   });
 
-  //   const activeIconMarkup = renderToStaticMarkup(<IconRed />);
-  //   const activeMarkerIcon = divIcon({
-  //     html: activeIconMarkup
-  //   });
-
   let imageText;
   let position = [""];
-
-  //   const mieze = props.currentMarker[0] && props.currentMarker[0].id;
-  //   console.log(props.currentMarker);
-  //   const feathers = props.steine.find(stein => stein.id === mieze);
-  //   console.log(feathers);
 
   return props.steine.map(stein => {
     position = [stein.lat, stein.lon];
