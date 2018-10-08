@@ -2,7 +2,6 @@ import React from "react";
 import { Marker, Popup } from "react-leaflet";
 import { renderToStaticMarkup } from "react-dom/server";
 import { divIcon } from "leaflet";
-import IconRed from "./IconRed";
 import IconBlue from "./IconBlue";
 
 import "./DefaultMarker.css";
