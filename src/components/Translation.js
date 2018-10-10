@@ -11,13 +11,31 @@ export default () => {
       </p>
       <ul>
         <li>"Here lived"</li>
-        <li class="font-italic">
+        <li className="font-italic">
           The victim's name (and maiden name if applicable)
         </li>
-        <li class="font-italic">Date of Birth</li>
-        <li class="font-italic">
+        <li className="font-italic">Date of Birth</li>
+        <li className="font-italic">
           Information about deportation or incarceration and date of death, if
-          known.
+          known. Some markers will also mention the cause of death, if known.
+          Some examples are:
+          <li>
+            <span className="font-italic"> "Erschossen (auf der Flucht)" </span>{" "}
+            - shot (when trying to escape)
+          </li>
+          <li>
+            <span className="font-italic"> "Ermordet" </span> - murdered
+          </li>
+          <li>
+            <span className="font-italic">"Freitod"</span> - suicide
+          </li>
+          <li>
+            <span className="font-italic">"Verschollen"</span> - missing
+          </li>
+          <li>
+            <span className="font-italic">"Für tot erklärt"</span> - declared
+            dead
+          </li>
         </li>
       </ul>
       <p>

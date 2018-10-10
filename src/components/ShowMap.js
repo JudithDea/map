@@ -1,5 +1,5 @@
 import React from "react";
-import { Map, TileLayer, Marker, Popup } from "react-leaflet";
+import { Map, TileLayer, Popup } from "react-leaflet";
 import { renderToStaticMarkup } from "react-dom/server";
 import { divIcon } from "leaflet";
 import IconBlue from "./IconBlue";
@@ -78,13 +78,6 @@ const ShowMap = props => {
             </DefaultMarker>
           );
         })}
-
-        {/* <DefaultMarker
-          steine={props.steine}
-          defaultSteine={props.defaultSteine}
-          activeStein={props.activeStein}
-        /> */}
-        {/* <CurrentMarker activeStein={props.activeStein} steine={props.steine} /> */}
       </Map>
     </div>
   );
