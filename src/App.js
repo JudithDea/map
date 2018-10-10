@@ -10,8 +10,8 @@ class App extends Component {
   state = {
     sideDrawerOpen: false,
     steine: [],
-    // defaultSteine: [],
-    activeStein: []
+    activeStein: [],
+    aboutOpen: false
   };
 
   componentDidMount() {
@@ -39,6 +39,12 @@ class App extends Component {
     console.log(`Selected stein id: ${id}`);
     this.setState({
       activeStein: id
+    });
+  };
+
+  aboutModalClickHandler = () => {
+    this.setState(prevState => {
+      return { aboutOpen: !prevState.aboutOpen };
     });
   };
 
