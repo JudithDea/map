@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-
 import escapeRegExp from "escape-string-regexp";
-
 import "./SideDrawer.css";
 
 class SideDrawer extends Component {
@@ -55,9 +53,8 @@ class SideDrawer extends Component {
             return (
               <li
                 key={stein.id}
-                id={stein.id}
                 className="list-group-item"
-                onClick={this.props.currentMarkerClickHandler}
+                onClick={() => this.props.currentMarkerClickHandler(stein.id)}
                 style={{ cursor: "pointer" }}
               >
                 {stein.tags.name}

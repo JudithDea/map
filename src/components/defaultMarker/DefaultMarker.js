@@ -3,23 +3,37 @@ import { Marker, Popup } from "react-leaflet";
 import { renderToStaticMarkup } from "react-dom/server";
 import { divIcon } from "leaflet";
 import IconBlue from "./IconBlue";
+import IconRed from "./IconRed";
 
 import "./DefaultMarker.css";
 
 const DefaultMarker = props => {
-  const iconMarkup = renderToStaticMarkup(<IconBlue />);
-  const defaultMarkerIcon = divIcon({
-    html: iconMarkup
-  });
+  const defaultIconMarkup = renderToStaticMarkup(<IconBlue />);
+  const defaultMarkerIcon = divIcon({ html: defaultIconMarkup });
+  const activeIconMarkup = renderToStaticMarkup(<IconRed />);
+  const activeMarkerIcon = divIcon({ html: activeIconMarkup });
 
   let imageText;
-  let position = [""];
 
   return props.steine.map(stein => {
-    position = [stein.lat, stein.lon];
+    const position = [stein.lat, stein.lon];
+    let imageText;
+    if (stein.tags.image) {
+      imageText = "Click here for a photo of the marker ";
+    }
+    const isActive = stein.id === props.activeStein;
 
     return (
-      <Marker position={position} key={stein.id} icon={defaultMarkerIcon}>
+      <Marker
+        position={position}
+        key={stein.id}
+        id={stein.id}
+        icon={isActive ? activeMarkerIcon : defaultMarkerIcon}
+        active={isActive}
+        currentMarkerClickHandler={props.currentMarkerClickHandler}
+        zIndexOffset={isActive ? 200 : 100}
+        click={() => props.currentMarkerClickHandler(stein.id)}
+      >
         <Popup>
           <p className="mb-0">
             <span style={{ fontWeight: "bold" }}>{stein.tags.name}</span>

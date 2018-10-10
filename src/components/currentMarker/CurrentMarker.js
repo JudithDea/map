@@ -1,14 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import { Marker, Popup } from "react-leaflet";
 import { renderToStaticMarkup } from "react-dom/server";
 import { divIcon } from "leaflet";
 import IconRed from "./IconRed";
 
-class CurrentMarker extends Marker {
-  componentDidMount() {
-    this.leafletElement.openPopup();
-  }
-
+class CurrentMarker extends Component {
   render() {
     const iconMarkup = renderToStaticMarkup(<IconRed />);
     const activeMarkerIcon = divIcon({

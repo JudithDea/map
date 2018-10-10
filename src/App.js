@@ -36,12 +36,10 @@ class App extends Component {
     });
   };
 
-  currentMarkerClickHandler = e => {
+  currentMarkerClickHandler = id => {
+    console.log(`Selected stein id: ${id}`);
     this.setState({
-      activeStein: this.state.steine.filter(stein => stein.id == e.target.id)
-    });
-    this.setState({
-      defaultSteine: this.state.steine.filter(stein => stein.id !== e.target.id)
+      activeStein: id
     });
   };
 

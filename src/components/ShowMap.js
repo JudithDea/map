@@ -30,8 +30,9 @@ const ShowMap = props => {
         <DefaultMarker
           steine={props.steine}
           defaultSteine={props.defaultSteine}
+          activeStein={props.activeStein}
         />
-        <CurrentMarker activeStein={props.activeStein} steine={props.steine} />
+        {/* <CurrentMarker activeStein={props.activeStein} steine={props.steine} /> */}
       </Map>
     </div>
   );
