@@ -10,7 +10,6 @@ class App extends Component {
   state = {
     sideDrawerOpen: false,
     steine: [],
-    currentMarker: "",
     defaultSteine: [],
     activeStein: []
   };
