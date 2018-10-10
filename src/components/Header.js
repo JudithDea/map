@@ -1,4 +1,5 @@
 import React from "react";
+import "./Header.css";
 
 const Header = props => {
   return (
@@ -13,7 +14,7 @@ const Header = props => {
       <div />
       <div className="container">
         <a href="/" className="navbar-brand py-2">
-          <h1>Neighborhood Map</h1>
+          <h1 className="here-lived">Here lived...</h1>
           <p className="mb-0">"Stolpersteine" in Bonn, Germany</p>
         </a>
       </div>

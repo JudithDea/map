@@ -14,13 +14,13 @@ const ShowMap = props => {
   const activeMarkerIcon = divIcon({ html: activeIconMarkup });
   // let position = [""];
   // console.log(this.state.steine);
-  const mapPosition = [50.729203, 7.099475];
+  const mapPosition = [50.716445, 7.131602];
 
   return (
     <div id="mapid" role="application">
       <Map
         center={mapPosition}
-        zoom={14}
+        zoom={12.5}
         style={{
           //Styling for window-sized map
           top: "0",
