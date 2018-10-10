@@ -44,7 +44,7 @@ const ShowMap = props => {
           const isActive = stein.id === props.activeStein;
 
           return (
-            <Marker
+            <DefaultMarker
               position={position}
               key={stein.id}
               id={stein.id}
@@ -75,7 +75,7 @@ const ShowMap = props => {
                   </a>
                 </p>
               </Popup>
-            </Marker>
+            </DefaultMarker>
           );
         })}
 
