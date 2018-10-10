@@ -1,6 +1,6 @@
 import React from "react";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
-import CurrentMarker from "./currentMarker/CurrentMarker";
+
 import DefaultMarker from "./defaultMarker/DefaultMarker";
 
 const ShowMap = props => {
