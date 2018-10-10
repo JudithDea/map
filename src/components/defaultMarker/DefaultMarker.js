@@ -1,6 +1,7 @@
 import { LeafletProvider, MapLayer, withLeaflet } from "react-leaflet";
 import { Marker as LeafletMarker } from "leaflet";
 import React from "react";
+import "./DefaultMarker.css";
 
 class DefaultMarker extends MapLayer {
   // All code in this component is Leaflet specific, see https://leafletjs.com/reference-1.3.4.html
@@ -17,6 +18,7 @@ class DefaultMarker extends MapLayer {
     );
   }
 
+  // once another item is selected, the active item needs to unmount to remove first popup from the DOM
   componentWillUnmount() {
     this.leafletElement.off("click");
     super.componentWillUnmount();
