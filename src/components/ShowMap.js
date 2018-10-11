@@ -26,7 +26,6 @@ class ShowMap extends Component {
     const activeIconMarkup = renderToStaticMarkup(<IconRed />);
     const activeMarkerIcon = divIcon({ html: activeIconMarkup });
     // console.log(this.state.steine);
-    const mapPosition = [50.716884, 7.104834];
 
     return (
       <div id="mapid" role="application">
@@ -47,13 +46,14 @@ class ShowMap extends Component {
             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-
+          {/* mapping through all locations to create markers and popups */}
           {this.props.steine.map(stein => {
             const position = [stein.lat, stein.lon];
             let imageText;
             if (stein.tags.image) {
               imageText = "Click here for a photo of the marker ";
             }
+            // checking if an item is selected to determine what icon and z-index needs to be used
             const isActive = stein.id === this.props.activeStein;
 
             return (
@@ -66,6 +66,7 @@ class ShowMap extends Component {
                 currentMarkerClickHandler={this.props.currentMarkerClickHandler}
                 zIndexOffset={isActive ? 200 : 100}
                 click={() => this.props.currentMarkerClickHandler(stein.id)}
+                alt={"Location of a Stolperstein"}
               >
                 {/* added onOpen event to make the map centered on the location of each new Popup */}
                 <Popup onOpen={() => this.handleCenterOnPopup(position)}>
