@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ShowMap from "./components/ShowMap";
 import SideDrawer from "./components/SideDrawer";
+import About from "./components/About";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -11,7 +12,8 @@ class App extends Component {
     sideDrawerOpen: false,
     steine: [],
     activeStein: [],
-    aboutOpen: false
+    aboutOpen: false,
+    translationOpen: false
   };
 
   componentDidMount() {
@@ -48,6 +50,12 @@ class App extends Component {
     });
   };
 
+  translationModalClickHandler = () => {
+    this.setState(prevState => {
+      return { translationOpen: !prevState.translationOpen };
+    });
+  };
+
   render() {
     let sideDrawer;
     if (this.state.sideDrawerOpen) {
@@ -55,7 +63,16 @@ class App extends Component {
         <SideDrawer
           steine={this.state.steine}
           currentMarkerClickHandler={this.currentMarkerClickHandler}
+          aboutModalClickHandler={this.aboutModalClickHandler}
+          translationModalClickHandler={this.translationModalClickHandler}
         />
+      );
+    }
+
+    let aboutOpen;
+    if (this.state.aboutOpen) {
+      aboutOpen = (
+        <About aboutModalClickHandler={this.aboutModalClickHandler} />
       );
     }
 
@@ -67,6 +84,7 @@ class App extends Component {
           steine={this.state.steine}
           activeStein={this.state.activeStein}
         />
+        {aboutOpen}
         <Footer />
       </div>
     );

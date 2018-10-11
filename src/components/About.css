@@ -1,0 +1,17 @@
+.about-component {
+  height: 80%;
+  width: 60%;
+  position: sticky;
+  background: #d5d8dc;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.5);
+  margin: 10% auto;
+  border: none;
+  z-index: 2000;
+  overflow-y: scroll;
+  padding: 10px 5px 25px 5px;
+}
+
+.about-this {
+  font-family: "Homemade Apple", cursive;
+  padding-top: 20px;
+}

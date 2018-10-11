@@ -2,8 +2,10 @@ import React from "react";
 
 export default () => {
   return (
-    <div>
-      <h1>How to translate Stolpersteine</h1>
+    <div className="translation-component bg-light w-50 h-50">
+      <h1 className="translation-this text-center">
+        How to translate Stolpersteine
+      </h1>
       <h4>Here lived... </h4>
       <p>
         The typical layout of a Stolperstein includes the following information,

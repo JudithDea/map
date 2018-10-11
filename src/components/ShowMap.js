@@ -21,6 +21,7 @@ const ShowMap = props => {
       <Map
         center={mapPosition}
         zoom={12.5}
+        zIndexOffset={100}
         style={{
           //Styling for window-sized map
           top: "0",
