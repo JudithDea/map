@@ -11,6 +11,10 @@ class DefaultMarker extends MapLayer {
     super.componentDidMount();
     if (this.props.active) {
       this.leafletElement.openPopup();
+
+      this.leafletElement.on("click", () =>
+        this.props.currentMarkerHandler(this.props.id)
+      );
     }
   }
 

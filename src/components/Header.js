@@ -3,11 +3,8 @@ import "./Header.css";
 
 const Header = props => {
   return (
-    <header role="banner" tabindex="0">
-      <nav
-        role="navigation"
-        className="navbar fixed-top navbar-expand-sm navbar-dark bg-secondary py-0"
-      >
+    <header role="banner" tabIndex="0">
+      <nav className="navbar fixed-top navbar-expand-sm navbar-dark bg-secondary py-0">
         <button
           className="bg-secondary border-0"
           onClick={props.hamburgerClickHandler}

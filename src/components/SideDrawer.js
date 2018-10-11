@@ -25,11 +25,7 @@ class SideDrawer extends Component {
     }
 
     return (
-      <nav
-        role="navigation"
-        aria-label="mainnav"
-        className="side-drawer fixed-left"
-      >
+      <nav aria-label="mainnav" className="side-drawer fixed-left">
         <ul className="list-group pt-3 pl-2 pb-3">
           <li
             className="item"
@@ -37,9 +33,9 @@ class SideDrawer extends Component {
             style={{ cursor: "pointer" }}
             role="navigation"
             aria-label="pagenav"
-            tabindex="0"
+            tabIndex="0"
           >
-            About this page
+            About this Page
           </li>
           <li
             className="item"
@@ -47,7 +43,7 @@ class SideDrawer extends Component {
             style={{ cursor: "pointer" }}
             role="navigation"
             aria-label="pagenav"
-            tabindex="0"
+            tabIndex="0"
           >
             Translation Help
           </li>
@@ -57,7 +53,7 @@ class SideDrawer extends Component {
               target="_blank"
               rel="noopener noreferrer"
               alt="External link to Wikipedia entry"
-              tabindex="0"
+              tabIndex="0"
             >
               About Stolpersteine <i className="fas fa-external-link-alt" />
             </a>
@@ -70,7 +66,7 @@ class SideDrawer extends Component {
               value={this.state.query}
               onChange={e => this.updateQuery(e.target.value)}
               role="search"
-              tabindex="0"
+              tabIndex="0"
             />
           </li>
         </ul>
@@ -82,7 +78,7 @@ class SideDrawer extends Component {
                 className="list-group-item"
                 onClick={() => this.props.currentMarkerClickHandler(stein.id)}
                 style={{ cursor: "pointer" }}
-                tabindex="0"
+                tabIndex="0"
               >
                 {stein.tags.name}
                 <br />

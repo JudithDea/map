@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 125px;
+  padding-top: 200px;
   border: none;
   z-index: 200;
   overflow: scroll;
@@ -40,4 +40,16 @@
 
 .list-group-item:hover {
   background-color: #e4e6e9;
+}
+
+@media screen and (min-width: 450px) {
+  .side-drawer {
+    padding-top: 160px;
+  }
+}
+
+@media screen and (min-width: 575px) {
+  .side-drawer {
+    padding-top: 120px;
+  }
 }
