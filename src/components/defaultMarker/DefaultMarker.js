@@ -12,10 +12,6 @@ class DefaultMarker extends MapLayer {
     if (this.props.active) {
       this.leafletElement.openPopup();
     }
-
-    this.leafletElement.on("click", () =>
-      this.props.currentMarkerClickHandler(this.props.id)
-    );
   }
 
   // once another item is selected, the active item needs to unmount to remove first popup from the DOM
