@@ -25,12 +25,19 @@ class SideDrawer extends Component {
     }
 
     return (
-      <nav className="side-drawer fixed-left">
+      <nav
+        role="navigation"
+        aria-label="mainnav"
+        className="side-drawer fixed-left"
+      >
         <ul className="list-group pt-3 pl-2 pb-3">
           <li
             className="item"
             onClick={this.props.aboutModalClickHandler}
             style={{ cursor: "pointer" }}
+            role="navigation"
+            aria-label="pagenav"
+            tabindex="0"
           >
             About this page
           </li>
@@ -38,6 +45,9 @@ class SideDrawer extends Component {
             className="item"
             onClick={this.props.translationModalClickHandler}
             style={{ cursor: "pointer" }}
+            role="navigation"
+            aria-label="pagenav"
+            tabindex="0"
           >
             Translation Help
           </li>
@@ -47,17 +57,20 @@ class SideDrawer extends Component {
               target="_blank"
               rel="noopener noreferrer"
               alt="External link to Wikipedia entry"
+              tabindex="0"
             >
               About Stolpersteine <i className="fas fa-external-link-alt" />
             </a>
           </li>
-          <li>
+          <li role="form">
             <input
               type="text"
               placeholder="Search Name/Street"
               className="rounded"
               value={this.state.query}
               onChange={e => this.updateQuery(e.target.value)}
+              role="search"
+              tabindex="0"
             />
           </li>
         </ul>
@@ -69,6 +82,7 @@ class SideDrawer extends Component {
                 className="list-group-item"
                 onClick={() => this.props.currentMarkerClickHandler(stein.id)}
                 style={{ cursor: "pointer" }}
+                tabindex="0"
               >
                 {stein.tags.name}
                 <br />

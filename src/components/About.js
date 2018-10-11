@@ -56,6 +56,7 @@ const About = props => {
           <button
             className="btn btn-light btn-outline-dark btn-sm"
             onClick={props.aboutModalClickHandler}
+            alt="close the about section"
           >
             Close
           </button>

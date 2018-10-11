@@ -70,27 +70,29 @@ class ShowMap extends Component {
               >
                 {/* added onOpen event to make the map centered on the location of each new Popup */}
                 <Popup onOpen={() => this.handleCenterOnPopup(position)}>
-                  <p className="mb-0">
-                    <span style={{ fontWeight: "bold" }}>
-                      {stein.tags.name}
-                    </span>
-                    <br />
-                    Date of birth: {stein.tags["person:date_of_birth"]}
-                    <br />
-                    Date of death: {stein.tags["person:date_of_death"]}
-                  </p>
-                  <p className="mb-0">"{stein.tags["memorial:text"]}" </p>
-                  <p>
-                    <a
-                      href={`https://de.wikipedia.org/wiki/Liste_der_Stolpersteine_in_Bonn#/media/${
-                        stein.tags.image
-                      }`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fas fa-external-link-alt" /> {imageText}
-                    </a>
-                  </p>
+                  <div tabindex="0">
+                    <p className="mb-0">
+                      <span style={{ fontWeight: "bold" }}>
+                        {stein.tags.name}
+                      </span>
+                      <br />
+                      Date of birth: {stein.tags["person:date_of_birth"]}
+                      <br />
+                      Date of death: {stein.tags["person:date_of_death"]}
+                    </p>
+                    <p className="mb-0">"{stein.tags["memorial:text"]}" </p>
+                    <p>
+                      <a
+                        href={`https://de.wikipedia.org/wiki/Liste_der_Stolpersteine_in_Bonn#/media/${
+                          stein.tags.image
+                        }`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fas fa-external-link-alt" /> {imageText}
+                      </a>
+                    </p>
+                  </div>
                 </Popup>
               </DefaultMarker>
             );

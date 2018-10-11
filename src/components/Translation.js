@@ -70,6 +70,7 @@ const Translation = props => {
         <button
           className="btn btn-light btn-outline-dark btn-sm"
           onClick={props.translationModalClickHandler}
+          alt="close the translation help box"
         >
           Close
         </button>
