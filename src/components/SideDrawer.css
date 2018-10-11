@@ -22,11 +22,17 @@
 }
 
 .side-drawer a {
-  color: #212529;
+  color: black;
   text-decoration: none;
 }
 
 .side-drawer a:hover {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+.item:hover {
   font-weight: bold;
   color: black;
   text-decoration: none;

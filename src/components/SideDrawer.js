@@ -28,12 +28,13 @@ class SideDrawer extends Component {
       <nav className="side-drawer fixed-left">
         <ul className="list-group pt-3 pl-2 pb-3">
           <li
+            className="item"
             onClick={this.props.aboutModalClickHandler}
             style={{ cursor: "pointer" }}
           >
             About this page
           </li>
-          <li>
+          <li className="item">
             <a
               href="https://en.wikipedia.org/wiki/Stolperstein"
               target="_blank"
@@ -43,7 +44,8 @@ class SideDrawer extends Component {
             </a>
           </li>
           <li
-            onlick={this.props.translationModalClickHandler}
+            className="item"
+            onClick={this.props.translationModalClickHandler}
             style={{ cursor: "pointer" }}
           >
             Translation Help

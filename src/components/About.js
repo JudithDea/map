@@ -7,10 +7,12 @@ const About = props => {
     <div className="about-container">
       <div className="about-component bg-light w-50 h-50">
         <h3 className="about-this text-center">About this page</h3>
+        <p className="font-italic">
+          TLDR: This is the final project for my Udacity Nanodegree
+        </p>
         <p>
-          This was originally the final project of the Udacity Nanodegree
-          program that I participated in (thanks to a Grow With Google
-          Scholarship) in 2018.
+          This page is my final project of the Udacity Nanodegree program that I
+          participated in (thanks to a Grow With Google Scholarship) in 2018.
         </p>
         <p>
           The objective was to create a responsive React app, displaying a map
@@ -23,8 +25,9 @@ const About = props => {
           I would walk by on a daily basis when I was living in Germany, and I
           had recently heard that the locations of Stolpersteine were collected
           and stored in a database. From here, it only took a quick Google
-          Search and many hours of MacGyvering to shape this project the way I
-          imagined.
+          search, many hours of MacGyvering and some help from Travis Martensen
+          (Danke, Travis!) with taming Leaflet JS to shape this project the way
+          I imagined.
         </p>
         <p>
           I hope this app creates awareness of Project Stolpersteine. Each
@@ -33,7 +36,6 @@ const About = props => {
           this neighborhood map is supposed to help breaking down and
           visualizing the cruel fate victims of the Holocaust had to face.
         </p>
-        <p>TLDR: This is the final project for my Udacity Nanodegree</p>
         <p>
           <a
             href="https://en.wikipedia.org/wiki/Stolperstein"
@@ -42,7 +44,7 @@ const About = props => {
           >
             Click here
           </a>{" "}
-          Click here to visit Wikipedia for more information on Stolpersteine.
+          to visit Wikipedia for more information about "Stolpersteine".
         </p>
         <div className="text-center">
           <button

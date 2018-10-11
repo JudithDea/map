@@ -1,6 +1,8 @@
 import React from "react";
+import "../App.css";
+import "./Translation.css";
 
-export default () => {
+const Translation = props => {
   return (
     <div className="translation-component bg-light w-50 h-50">
       <h1 className="translation-this text-center">
@@ -13,31 +15,34 @@ export default () => {
       </p>
       <ul>
         <li>"Here lived"</li>
-        <li className="font-italic">
-          The victim's name (and maiden name if applicable)
-        </li>
-        <li className="font-italic">Date of Birth</li>
-        <li className="font-italic">
+        <li>The victim's name (and maiden name if applicable)</li>
+        <li>Date of Birth</li>
+        <li>
           Information about deportation or incarceration and date of death, if
           known. Some markers will also mention the cause of death, if known.
           Some examples are:
-          <li>
-            <span className="font-italic"> "Erschossen (auf der Flucht)" </span>{" "}
-            - shot (when trying to escape)
-          </li>
-          <li>
-            <span className="font-italic"> "Ermordet" </span> - murdered
-          </li>
-          <li>
-            <span className="font-italic">"Freitod"</span> - suicide
-          </li>
-          <li>
-            <span className="font-italic">"Verschollen"</span> - missing
-          </li>
-          <li>
-            <span className="font-italic">"Für tot erklärt"</span> - declared
-            dead
-          </li>
+          <ul className="px-5">
+            <li>
+              <span className="font-italic">
+                {" "}
+                "Erschossen (auf der Flucht)"{" "}
+              </span>{" "}
+              - shot (while trying to escape)
+            </li>
+            <li>
+              <span className="font-italic"> "Ermordet" </span> - murdered
+            </li>
+            <li>
+              <span className="font-italic">"Freitod"</span> - suicide
+            </li>
+            <li>
+              <span className="font-italic">"Verschollen"</span> - missing
+            </li>
+            <li>
+              <span className="font-italic">"Für tot erklärt"</span> - declared
+              dead
+            </li>
+          </ul>
         </li>
       </ul>
       <p>
@@ -61,6 +66,16 @@ export default () => {
         </a>
         .
       </p>
+      <div className="text-center">
+        <button
+          className="btn btn-light btn-outline-dark btn-sm"
+          onClick={props.translationModalClickHandler}
+        >
+          Close
+        </button>
+      </div>
     </div>
   );
 };
+
+export default Translation;

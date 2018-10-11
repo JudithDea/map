@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import ShowMap from "./components/ShowMap";
 import SideDrawer from "./components/SideDrawer";
 import About from "./components/About";
+import Translation from "./components/Translation";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -76,6 +77,15 @@ class App extends Component {
       );
     }
 
+    let translationOpen;
+    if (this.state.translationOpen) {
+      aboutOpen = (
+        <Translation
+          translationModalClickHandler={this.translationModalClickHandler}
+        />
+      );
+    }
+
     return (
       <div style={{ height: "100%" }}>
         <Header hamburgerClickHandler={this.hamburgerClickHandler} />
@@ -85,6 +95,7 @@ class App extends Component {
           activeStein={this.state.activeStein}
         />
         {aboutOpen}
+        {translationOpen}
         <Footer />
       </div>
     );
