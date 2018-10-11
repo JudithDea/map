@@ -29,7 +29,7 @@ class App extends Component {
       .then(steine => {
         this.setState({ steine: steine.elements });
       })
-      .catch(err => console.log("There was a problem loading data", err));
+      .catch(err => alert("There was a problem loading data:", err));
   }
 
   hamburgerClickHandler = () => {
