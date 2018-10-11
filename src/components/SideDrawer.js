@@ -34,21 +34,22 @@ class SideDrawer extends Component {
           >
             About this page
           </li>
-          <li className="item">
-            <a
-              href="https://en.wikipedia.org/wiki/Stolperstein"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              About Stolpersteine <i className="fas fa-external-link-alt" />
-            </a>
-          </li>
           <li
             className="item"
             onClick={this.props.translationModalClickHandler}
             style={{ cursor: "pointer" }}
           >
             Translation Help
+          </li>
+          <li className="item">
+            <a
+              href="https://en.wikipedia.org/wiki/Stolperstein"
+              target="_blank"
+              rel="noopener noreferrer"
+              alt="External link to Wikipedia entry"
+            >
+              About Stolpersteine <i className="fas fa-external-link-alt" />
+            </a>
           </li>
           <li>
             <input

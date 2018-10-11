@@ -8,7 +8,7 @@ const About = props => {
       <div className="about-component bg-light w-50 h-50">
         <h3 className="about-this text-center">About this page</h3>
         <p className="font-italic">
-          TLDR: This is the final project for my Udacity Nanodegree
+          TLDR: This is the final project for my Udacity Nanodegree.
         </p>
         <p>
           This page is my final project of the Udacity Nanodegree program that I
@@ -20,18 +20,24 @@ const About = props => {
           location, coming from a separate API.
         </p>
         <p>
-          I immediately knew I wanted to show Stolpersteine, a decentralized
-          memorial commemorating victims of the Holocaust. Some of these markers
-          I would walk by on a daily basis when I was living in Germany, and I
-          had recently heard that the locations of Stolpersteine were collected
-          and stored in a database. From here, it only took a quick Google
-          search, many hours of MacGyvering and some help from Travis Martensen
-          (Danke, Travis!) with taming Leaflet JS to shape this project the way
-          I imagined.
+          I immediately knew I wanted to show Stolpersteine, a{" "}
+          <span className="font-weight-bold">
+            decentralized memorial commemorating victims of the Holocaust.
+          </span>{" "}
+          Some of these markers I would walk by on a daily basis when I was
+          living in Germany, and I had recently heard that the locations of
+          Stolpersteine were collected and stored in a database. From here, it
+          only took a quick Google search, many hours of coding and some help
+          from Travis Martensen with taming{" "}
+          <span className="font-italic">Leaflet JS</span> to shape this project
+          the way I imagined. Danke, Travis!
         </p>
         <p>
           I hope this app creates awareness of Project Stolpersteine. Each
-          individual marker, placed at the victim's last place of residency,
+          individual marker,{" "}
+          <span className="font-weight-bold">
+            placed at the victim's last place of residency,
+          </span>{" "}
           symbolizes a life destroyed. Other than just finishing the Nanodegree,
           this neighborhood map is supposed to help breaking down and
           visualizing the cruel fate victims of the Holocaust had to face.
