@@ -1,7 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+## About this Project
+This project represents the final project of the current version of Udacity's Nanodegree program in conjunction with the Grow with Google Scholarship. 
+
+It was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+
+## Getting started
+- Clone or download this repo: https://github.com/JudithDea/neighborhood-map
+- Install all dependencies with "npm install"
+- Run "npm start" to initialize the localhost.
+
+## Using the App
+This map displays all known locations of so-called "Stolpersteine", a type of historicala marker, within the city limits of Bonn, Germany. 
+These markers are part of a *decentralized memorial commemorating victims of the Holocaust*. Each physical marker is about 10 x 10 inches wide, and each family member / house resident received their own marker. This results in clusters of markers at the same coordinates. **For testing the map markers, it is advisable to click on different street addresses on the left side drawer menu in able to see the location change**.
+- To find an individual marker, select an item within the side drawer. The corresponding marker on the map will turn red and open a popup with more information about the person.
+- Within the side drawer, use the search function to search for a name or street address.
+- Please refer to the "Translation Help" reference in the side drawer to learn more about each marker's meaning.
+
+## Note about the Service Worker
+Create-React-App service worker caches only in production mode.
 
 ## Table of Contents
 
