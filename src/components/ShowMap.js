@@ -8,19 +8,30 @@ import IconRed from "./IconRed";
 import DefaultMarker from "./defaultMarker/DefaultMarker";
 
 class ShowMap extends Component {
+  state = {
+    center: [50.729203, 7.099475]
+  };
+
+  // event handler to center the map on a newly opened popup
+  handleCenterOnPopup(latLng) {
+    console.log(`Moving center to: ${latLng}`);
+    this.setState({
+      center: latLng
+    });
+  }
+
   render() {
     const defaultIconMarkup = renderToStaticMarkup(<IconBlue />);
     const defaultMarkerIcon = divIcon({ html: defaultIconMarkup });
     const activeIconMarkup = renderToStaticMarkup(<IconRed />);
     const activeMarkerIcon = divIcon({ html: activeIconMarkup });
-    // let position = [""];
     // console.log(this.state.steine);
     const mapPosition = [50.716884, 7.104834];
 
     return (
       <div id="mapid" role="application">
         <Map
-          center={mapPosition}
+          center={this.state.center}
           zoom={12.5}
           zIndexOffset={100}
           style={{
@@ -56,7 +67,8 @@ class ShowMap extends Component {
                 zIndexOffset={isActive ? 200 : 100}
                 click={() => this.props.currentMarkerClickHandler(stein.id)}
               >
-                <Popup>
+                {/* added onOpen event to make the map centered on the location of each new Popup */}
+                <Popup onOpen={() => this.handleCenterOnPopup(position)}>
                   <p className="mb-0">
                     <span style={{ fontWeight: "bold" }}>
                       {stein.tags.name}
