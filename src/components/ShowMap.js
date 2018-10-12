@@ -6,6 +6,7 @@ import IconBlue from "./IconBlue";
 import IconRed from "./IconRed";
 
 import DefaultMarker from "./defaultMarker/DefaultMarker";
+import escapeRegExp from "escape-string-regexp";
 
 class ShowMap extends Component {
   state = {
@@ -27,6 +28,17 @@ class ShowMap extends Component {
     const activeMarkerIcon = divIcon({ html: activeIconMarkup });
     // console.log(this.state.steine);
 
+    let showingMarkers;
+    if (this.props.query) {
+      const match = new RegExp(escapeRegExp(this.props.query), "i");
+      showingMarkers = this.props.steine.filter(
+        stein =>
+          match.test(stein.tags.name) || match.test(stein.tags["addr:street"])
+      );
+    } else {
+      showingMarkers = this.props.steine;
+    }
+
     return (
       <div id="mapid" role="application">
         <Map
@@ -46,8 +58,9 @@ class ShowMap extends Component {
             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          {/* mapping through all locations to create markers and popups */}
-          {this.props.steine.map(stein => {
+          {/* mapping through all locations according to filter to create markers and popups */}
+
+          {showingMarkers.map(stein => {
             const position = [stein.lat, stein.lon];
             let imageText;
             if (stein.tags.image) {

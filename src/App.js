@@ -102,6 +102,7 @@ class App extends Component {
         <ShowMap
           steine={this.state.steine}
           activeStein={this.state.activeStein}
+          query={this.state.query}
         />
         {aboutOpen}
         {translationOpen}
