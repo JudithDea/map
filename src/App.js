@@ -12,9 +12,11 @@ class App extends Component {
   state = {
     sideDrawerOpen: true,
     steine: [],
+    filteredSteine: [],
     activeStein: [],
     aboutOpen: false,
-    translationOpen: false
+    translationOpen: false,
+    query: ""
   };
 
   componentDidMount() {
@@ -57,12 +59,19 @@ class App extends Component {
     });
   };
 
+  updateQuery = query => {
+    this.setState({ query });
+  };
+
   render() {
     let sideDrawer;
     if (this.state.sideDrawerOpen) {
       sideDrawer = (
         <SideDrawer
+          updateQuery={this.updateQuery}
+          query={this.state.query}
           steine={this.state.steine}
+          steineFilter={this.steineFilter}
           currentMarkerClickHandler={this.currentMarkerClickHandler}
           aboutModalClickHandler={this.aboutModalClickHandler}
           translationModalClickHandler={this.translationModalClickHandler}

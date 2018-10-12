@@ -4,18 +4,18 @@ import "./SideDrawer.css";
 
 class SideDrawer extends Component {
   state = {
-    query: "",
+    // query: "",
     filteredSteine: []
   };
 
-  updateQuery = query => {
-    this.setState({ query });
-  };
+  // updateQuery = query => {
+  //   this.setState({ query });
+  // };
 
   render() {
     let showingSteine;
-    if (this.state.query) {
-      const match = new RegExp(escapeRegExp(this.state.query), "i");
+    if (this.props.query) {
+      const match = new RegExp(escapeRegExp(this.props.query), "i");
       showingSteine = this.props.steine.filter(
         stein =>
           match.test(stein.tags.name) || match.test(stein.tags["addr:street"])
@@ -64,7 +64,7 @@ class SideDrawer extends Component {
               placeholder="Search Name/Street"
               className="rounded"
               value={this.state.query}
-              onChange={e => this.updateQuery(e.target.value)}
+              onChange={e => this.props.updateQuery(e.target.value)}
               role="search"
               tabIndex="0"
             />

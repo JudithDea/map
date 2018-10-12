@@ -70,7 +70,7 @@ class ShowMap extends Component {
               >
                 {/* added onOpen event to make the map centered on the location of each new Popup */}
                 <Popup onOpen={() => this.handleCenterOnPopup(position)}>
-                  <div tabindex="0">
+                  <div tabIndex="0">
                     <p className="mb-0">
                       <span style={{ fontWeight: "bold" }}>
                         {stein.tags.name}
