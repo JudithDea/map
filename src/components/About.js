@@ -28,7 +28,7 @@ const About = props => {
           living in Germany, and I had recently heard that the locations of
           Stolpersteine were collected and stored in a database. From here, it
           only took a quick Google search, many hours of coding and some help
-          from Travis Martensen with taming{" "}
+          from a friend with taming{" "}
           <span className="font-italic">Leaflet JS</span> to shape this project
           the way I imagined. Danke, Travis!
         </p>
